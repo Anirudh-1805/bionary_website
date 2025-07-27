@@ -1,478 +1,191 @@
+/* ============================= */
+/*          TAILWIND BASE       */
+/* ============================= */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS Variables */
-:root {
-  --neon-cyan: #00ffff;
-  --neon-violet: #8b5cf6;
-  --neon-pink: #ec4899;
-  --space-50: #f8fafc;
-  --space-100: #f1f5f9;
-  --space-200: #e2e8f0;
-  --space-300: #cbd5e1;
-  --space-400: #94a3b8;
-  --space-500: #64748b;
-  --space-600: #475569;
-  --space-700: #334155;
-  --space-800: #1e293b;
-  --space-900: #0f172a;
-  --space-950: #020617;
-}
 
-/* Stunning Animated Background */
-body {
-  background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #0f172a);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  position: relative;
-  overflow-x: hidden;
-}
+/* ============================= */
+/*     CUSTOM CSS VARIABLES     */
+/* ============================= */
+/* Define custom neon and space-themed colors */
 
-/* Animated Gradient Background */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 90% 90%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
-  animation: backgroundPulse 8s ease-in-out infinite;
-  z-index: -2;
-}
 
-/* Floating Particles Background */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, rgba(0, 255, 255, 0.8), transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(139, 92, 246, 0.8), transparent),
-    radial-gradient(1px 1px at 90px 40px, rgba(236, 72, 153, 0.8), transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(16, 185, 129, 0.8), transparent),
-    radial-gradient(2px 2px at 160px 30px, rgba(0, 255, 255, 0.8), transparent),
-    radial-gradient(1px 1px at 200px 60px, rgba(139, 92, 246, 0.8), transparent),
-    radial-gradient(2px 2px at 240px 90px, rgba(236, 72, 153, 0.8), transparent),
-    radial-gradient(1px 1px at 280px 20px, rgba(16, 185, 129, 0.8), transparent),
-    radial-gradient(2px 2px at 320px 70px, rgba(0, 255, 255, 0.8), transparent),
-    radial-gradient(1px 1px at 360px 40px, rgba(139, 92, 246, 0.8), transparent);
-  background-repeat: repeat;
-  background-size: 400px 400px;
-  animation: particleFloat 20s linear infinite;
-  z-index: -1;
-}
+/* ============================= */
+/*   STUNNING BACKGROUND SETUP  */
+/* ============================= */
 
-/* Animated Grid Pattern */
-.grid-pattern {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: gridMove 30s linear infinite;
-  z-index: -3;
-}
+/* Gradient animated background for the body */
 
-/* Gradient Shift Animation */
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+/* Glowing radial overlays using ::before */
 
-/* Background Pulse Animation */
-@keyframes backgroundPulse {
-  0%, 100% {
-    opacity: 0.8;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-}
+/* Floating particles using ::after */
 
-/* Particle Float Animation */
-@keyframes particleFloat {
-  0% {
-    transform: translateY(0px) translateX(0px);
-  }
-  25% {
-    transform: translateY(-20px) translateX(10px);
-  }
-  50% {
-    transform: translateY(-40px) translateX(-10px);
-  }
-  75% {
-    transform: translateY(-20px) translateX(10px);
-  }
-  100% {
-    transform: translateY(0px) translateX(0px);
-  }
-}
+/* Optional animated grid pattern layer */
 
-/* Grid Move Animation */
-@keyframes gridMove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50px, 50px);
-  }
-}
 
-/* Neon Glow Effects */
-.neon-glow {
-  box-shadow: 
-    0 0 5px rgba(0, 255, 255, 0.5),
-    0 0 10px rgba(0, 255, 255, 0.3),
-    0 0 15px rgba(0, 255, 255, 0.1);
-}
+/* ============================= */
+/*       KEYFRAME ANIMATIONS    */
+/* ============================= */
 
-.neon-glow-violet {
-  box-shadow: 
-    0 0 5px rgba(139, 92, 246, 0.5),
-    0 0 10px rgba(139, 92, 246, 0.3),
-    0 0 15px rgba(139, 92, 246, 0.1);
-}
+/* Gradient shifting animation */
 
-.neon-glow-pink {
-  box-shadow: 
-    0 0 5px rgba(236, 72, 153, 0.5),
-    0 0 10px rgba(236, 72, 153, 0.3),
-    0 0 15px rgba(236, 72, 153, 0.1);
-}
+/* Background pulse effect */
 
-/* Gradient Text */
-.gradient-text {
-  background: linear-gradient(135deg, #00ffff, #8b5cf6, #ec4899);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientText 3s ease infinite;
-}
+/* Particle float drift animation */
 
-@keyframes gradientText {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
+/* Animated grid movement */
 
-/* Animated Border */
-.animated-border {
-  position: relative;
-  background: linear-gradient(45deg, #00ffff, #8b5cf6, #ec4899, #00ffff);
-  background-size: 400% 400%;
-  animation: borderGradient 3s ease infinite;
-  padding: 2px;
-  border-radius: 8px;
-}
+/* Glitching animation */
 
-.animated-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  border-radius: inherit;
-  z-index: -1;
-}
+/* Floating bounce effect */
 
-@keyframes borderGradient {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
+/* Pulse zoom effect */
 
-/* Floating Animation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
+/* Text gradient animation */
 
-.float-animation {
-  animation: float 6s ease-in-out infinite;
-}
+/* Border gradient animation */
 
-/* Pulse Animation */
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
 
-.pulse-animation {
-  animation: pulse 2s ease-in-out infinite;
-}
+/* ============================= */
+/*         NEON EFFECTS         */
+/* ============================= */
 
-/* Glitch Effect */
-@keyframes glitch {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  80% {
-    transform: translate(2px, -2px);
-  }
-  100% {
-    transform: translate(0);
-  }
-}
+/* Neon cyan glow */
 
-.glitch-effect {
-  animation: glitch 0.3s ease-in-out infinite;
-}
+/* Neon violet glow */
 
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
+/* Neon pink glow */
 
-::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.5);
-}
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #00ffff, #8b5cf6);
-  border-radius: 4px;
-}
+/* ============================= */
+/*        GRADIENT TEXT         */
+/* ============================= */
+/* Applies animated linear gradient fill to text */
 
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #8b5cf6, #ec4899);
-}
 
-/* Selection Styling */
-::selection {
-  background: rgba(0, 255, 255, 0.3);
-  color: #ffffff;
-}
+/* ============================= */
+/*     ANIMATED BORDER STYLE    */
+/* ============================= */
+/* Glowing animated border wrapper for elements */
 
-/* Focus Styles */
-*:focus {
-  outline: 2px solid rgba(0, 255, 255, 0.5);
-  outline-offset: 2px;
-}
 
-/* Dark mode overrides */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #0f172a);
-  }
-}
+/* ============================= */
+/*     COMPONENT ANIMATIONS     */
+/* ============================= */
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  body::after {
-    background-size: 200px 200px;
-  }
-  
-  .grid-pattern {
-    background-size: 25px 25px;
-  }
-}
+/* Floating up and down animation */
 
-/* Performance optimizations */
-* {
-  box-sizing: border-box;
-}
+/* Pulse scaling animation */
 
-/* Smooth transitions */
-* {
-  transition: all 0.3s ease;
-}
+/* Glitchy movement effect */
 
-/* Custom utility classes */
-@layer utilities {
-  .text-shadow {
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-  }
-  
-  .backdrop-blur-custom {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-  
-  .glass-effect {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-}
 
-@layer base {
-  * {
-    @apply border-gray-200 dark:border-gray-700;
-  }
-  
-  body {
-    @apply bg-space-50 text-space-900 dark:bg-space-900 dark:text-space-50;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-}
+/* ============================= */
+/*       SCROLLBAR STYLING      */
+/* ============================= */
 
-@layer components {
-  .gradient-text {
-    @apply bg-gradient-to-r from-neon-cyan via-neon-violet to-neon-pink bg-clip-text text-transparent;
-  }
-  
-  .glass-effect {
-    @apply backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10;
-  }
-  
-  .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-neon-cyan/20;
-  }
-  
-  .neon-glow {
-    @apply shadow-lg shadow-neon-cyan/50;
-  }
-  
-  .text-gradient {
-    background: linear-gradient(135deg, #00ffff 0%, #8b5cf6 50%, #ec4899 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-}
+/* Customize width and track style */
 
-@layer utilities {
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-}
+/* Thumb gradient and hover effect */
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
 
-::-webkit-scrollbar-track {
-  @apply bg-space-200 dark:bg-space-800;
-}
+/* ============================= */
+/*      TEXT SELECTION STYLE    */
+/* ============================= */
 
-::-webkit-scrollbar-thumb {
-  @apply bg-space-400 dark:bg-space-600 rounded-full;
-}
+/* Background + text color for selected content */
 
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-space-500 dark:bg-space-500;
-}
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+/* ============================= */
+/*         FOCUS STYLING        */
+/* ============================= */
 
-.animate-gradient {
-  background-size: 200% auto;
-  animation: gradient 8s linear infinite;
-}
+/* Universal focus outline with glow */
+
+
+/* ============================= */
+/*    DARK MODE ADJUSTMENTS     */
+/* ============================= */
+
+/* Override background for dark theme */
+
+
+/* ============================= */
+/*   RESPONSIVE OPTIMIZATIONS   */
+/* ============================= */
+
+/* Particle + grid resizing on small screens */
+
+
+/* ============================= */
+/*   PERFORMANCE OPTIMIZATION   */
+/* ============================= */
+
+/* Force border-box model */
+
+/* Enable smooth transition globally */
+
+
+/* ============================= */
+/*  CUSTOM UTILITY CLASSES @layer utilities  */
+/* ============================= */
+
+/* Text shadow utility */
+
+/* Backdrop blur utility */
+
+/* Glassmorphism utility */
+
+
+/* ============================= */
+/*     BASE STYLES @layer base  */
+/* ============================= */
+
+/* Universal border color */
+
+/* Dark/light theme backgrounds and text */
+
+/* Smooth scroll on HTML */
+
+
+/* ============================= */
+/* COMPONENT STYLES @layer components */
+/* ============================= */
+
+/* Reusable gradient text with Tailwind */
+
+/* Consistent glass card with blur */
+
+/* Interactive hover cards with scaling and shadow */
+
+/* Neon box shadow for effects */
+
+/* CSS gradient clipped text */
+
+
+/* ============================= */
+/* ADDITIONAL UTILITIES @layer utilities */
+/* ============================= */
+
+/* Hide scrollbars completely */
+
+/* Custom scrollbar for all modes */
+
+/* Animate gradient effect */
 
 /* Smooth transitions for dark mode */
-* {
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
 
-/* Scroll animations */
-.scroll-fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+/* Scroll fade-in effect */
 
-.scroll-fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* Hover glow effect */
 
-/* Enhanced hover effects */
-.hover-glow {
-  transition: all 0.3s ease-in-out;
-}
+/* Floating animation reused */
 
-.hover-glow:hover {
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
+/* Theme color transitions */
 
-/* Particle animation */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
 
-.floating-particle {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Dark mode transition */
-.dark-mode-transition {
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-}
-
- 
+/* ============================= */
+/*         END OF FILE          */
+/* ============================= */
